@@ -1,0 +1,139 @@
+/* 🌙 Dark Mode Dashboard */
+.dashboard-container {
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.dashboard-container h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* 🧱 Make cards responsive using flexbox */
+.dashboard-container > .card,
+.dashboard-container > .card.leaderboard-link {
+  width: 100%;
+  max-width: 350px;
+  margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .dashboard-container h2 {
+    width: 100%;
+  }
+}
+
+/* 🧊 Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* 🎯 Card Titles */
+.card h3 {
+  font-size: 1.3rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* 🟡 Emojis via ::before without JSX change */
+.card.referral h3::before {
+  content: "📢";
+  position: absolute;
+  left: 0;
+}
+
+.card.donations h3::before {
+  content: "💰";
+  position: absolute;
+  left: 0;
+}
+
+.card.rewards h3::before {
+  content: "🏅";
+  position: absolute;
+  left: 0;
+}
+
+.card.leaderboard-link h3::before {
+  content: "📊";
+  position: absolute;
+  left: 0;
+}
+
+/* 📝 Card Text */
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 📈 Leaderboard Link */
+.card.leaderboard-link {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.card.leaderboard-link a {
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.card.leaderboard-link a:hover {
+  color: #66d9ff;
+  text-decoration: underline;
+}
+
+/* 🚪 Logout Button */
+.dashboard-container button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 77, 79, 0.4);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.dashboard-container button:hover {
+  background-color: #e04345;
+  transform: scale(1.03);
+}
